@@ -25,9 +25,9 @@ class StartViewController: UIViewController {
             let questionVariation1 = Question(category: "Food", type: .multiple, difficulty: .easy, question: "What is my favourite food?", correctAnswer: "🍕", inccorectAnswer: ["🐟","🍚","🥩"])
             let questionVariation2 = Question(category: "Drink", type: .multiple, difficulty: .medium, question: "What is my favourite drink?", correctAnswer: "🍻", inccorectAnswer: ["🧉","🍷","☕️"])
             let questionVariation3 = Question(category: "Emotion", type: .multiple, difficulty: .easy, question: "What is my favourite emotion", correctAnswer: "🤩", inccorectAnswer: ["🥳","🤪","🤨"])
-            var questions = [questionVariation1,questionVariation2,questionVariation3]
-            questions.shuffle()
-            questionViewController.question = questions.removeFirst()
+            let questions = [questionVariation1,questionVariation2,questionVariation3]
+            questionViewController.questions = questions
+            questionViewController.numberOfQuestions = questions.count
         }
     }
 
