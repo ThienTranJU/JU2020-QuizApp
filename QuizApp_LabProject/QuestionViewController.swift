@@ -29,6 +29,8 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
+        
         var buttons = [buttonAnswerA, buttonAnswerB, buttonAnswerC, buttonAnswerD]
         buttons.forEach{(button) in
             button?.layer.cornerRadius = 20
