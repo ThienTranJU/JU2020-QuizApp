@@ -37,20 +37,27 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the JU Quiz App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-xB-0nu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="193.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-OX-NXF">
-                                        <rect key="frame" x="0.0" y="258" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="193.5" width="414" height="193.5"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <segue destination="ozw-x1-cNn" kind="show" id="xDM-xl-ur5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Mu-Uyr">
+                                        <rect key="frame" x="0.0" y="387" width="414" height="193.5"/>
+                                        <state key="normal" title="Highscore"/>
+                                        <connections>
+                                            <action selector="highscoreButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="XLH-MW-Pek"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWT-xM-zxr">
-                                        <rect key="frame" x="0.0" y="516" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="580.5" width="414" height="193.5"/>
                                         <state key="normal" title="Contact me"/>
                                         <connections>
                                             <segue destination="P5X-3R-hhN" kind="show" id="uqu-xg-Ff0"/>
@@ -59,6 +66,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="TAn-xB-0nu" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="3lX-IQ-nSu"/>
+                                    <constraint firstItem="lkx-Mu-Uyr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="MvQ-Ty-Nti"/>
                                     <constraint firstItem="fWT-xM-zxr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="hQI-Pn-te9"/>
                                 </constraints>
                             </stackView>
@@ -73,6 +81,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="JU Quiz" id="8PS-EY-MKB"/>
+                    <connections>
+                        <outlet property="startButton" destination="o9m-OX-NXF" id="e3I-h9-7Mc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcz-Ox-wqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,7 +183,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HfN-OB-abV">
                                 <rect key="frame" x="20" y="108" width="374" height="754"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite food?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCN-Wd-epE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite food?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCN-Wd-epE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="367"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -185,19 +196,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cdc-tT-tuS">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="173.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4E-Wa-Vtk">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="s4E-Wa-Vtk">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="173.5"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="🐟"/>
                                                         <connections>
                                                             <action selector="buttonAnswerAHandler:" destination="ozw-x1-cNn" eventType="touchUpInside" id="DpI-vv-VAs"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-hx-3xC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-hx-3xC">
                                                         <rect key="frame" x="197" y="0.0" width="177" height="173.5"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="🥩"/>
                                                         <connections>
                                                             <action selector="buttonAnswerBHandler:" destination="ozw-x1-cNn" eventType="touchUpInside" id="lMJ-RU-mlH"/>
@@ -208,19 +219,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J2K-qx-EPL">
                                                 <rect key="frame" x="0.0" y="193.5" width="374" height="173.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPn-W0-0EF">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wPn-W0-0EF">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="173.5"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="🍚"/>
                                                         <connections>
                                                             <action selector="buttonAnswerCHandler:" destination="ozw-x1-cNn" eventType="touchUpInside" id="39n-zp-oEO"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-wd-YhN">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-wd-YhN">
                                                         <rect key="frame" x="197" y="0.0" width="177" height="173.5"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="🍕"/>
                                                         <connections>
                                                             <action selector="buttonAnswerDHandler:" destination="ozw-x1-cNn" eventType="touchUpInside" id="7xg-rG-XH9"/>

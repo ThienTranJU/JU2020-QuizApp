@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6357888256016F8003245FB /* QuestionsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6357887256016F8003245FB /* QuestionsResult.swift */; };
+		B635788E256020B5003245FB /* QuizApp_LabProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B635788C256020B5003245FB /* QuizApp_LabProject.xcdatamodeld */; };
+		B63578942560228B003245FB /* GameResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63578922560228B003245FB /* GameResult+CoreDataClass.swift */; };
+		B63578952560228B003245FB /* GameResult+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */; };
 		B674BDA9254961410063CC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDA8254961410063CC0A /* AppDelegate.swift */; };
 		B674BDAB254961410063CC0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDAA254961410063CC0A /* SceneDelegate.swift */; };
 		B674BDB0254961410063CC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B674BDAE254961410063CC0A /* Main.storyboard */; };
@@ -14,6 +18,7 @@
 		B674BDB5254961430063CC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B674BDB3254961430063CC0A /* LaunchScreen.storyboard */; };
 		B674BDC0254961440063CC0A /* QuizApp_LabProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDBF254961440063CC0A /* QuizApp_LabProjectTests.swift */; };
 		B674BDCB254961440063CC0A /* QuizApp_LabProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDCA254961440063CC0A /* QuizApp_LabProjectUITests.swift */; };
+		B6B7582025603265005D2E91 /* HighscoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B7581F25603265005D2E91 /* HighscoreTableViewController.swift */; };
 		B6D7AE452552A7FA0058BB97 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */; };
 		B6D7AE4A2552A8DB0058BB97 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7AE492552A8DB0058BB97 /* ResultView.swift */; };
 		B6D7AE4F2552B7BF0058BB97 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7AE4E2552B7BF0058BB97 /* Question.swift */; };
@@ -39,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6357887256016F8003245FB /* QuestionsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResult.swift; sourceTree = "<group>"; };
+		B635788D256020B5003245FB /* QuizApp_LabProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizApp_LabProject.xcdatamodel; sourceTree = "<group>"; };
+		B63578922560228B003245FB /* GameResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B674BDA5254961410063CC0A /* QuizApp_LabProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp_LabProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B674BDA8254961410063CC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B674BDAA254961410063CC0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		B674BDC6254961440063CC0A /* QuizApp_LabProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizApp_LabProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B674BDCA254961440063CC0A /* QuizApp_LabProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApp_LabProjectUITests.swift; sourceTree = "<group>"; };
 		B674BDCC254961440063CC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6B7581F25603265005D2E91 /* HighscoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewController.swift; sourceTree = "<group>"; };
 		B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B6D7AE492552A8DB0058BB97 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		B6D7AE4E2552B7BF0058BB97 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -108,15 +118,20 @@
 			isa = PBXGroup;
 			children = (
 				B674BDA8254961410063CC0A /* AppDelegate.swift */,
-				B674BDAA254961410063CC0A /* SceneDelegate.swift */,
-				B674BDAE254961410063CC0A /* Main.storyboard */,
 				B674BDB1254961430063CC0A /* Assets.xcassets */,
-				B674BDB3254961430063CC0A /* LaunchScreen.storyboard */,
+				B63578922560228B003245FB /* GameResult+CoreDataClass.swift */,
+				B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */,
+				B6B7581F25603265005D2E91 /* HighscoreTableViewController.swift */,
 				B674BDB6254961430063CC0A /* Info.plist */,
-				B6F01E0F25496E18003E1B21 /* QuestionViewController.swift */,
-				B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */,
-				B6D7AE492552A8DB0058BB97 /* ResultView.swift */,
+				B674BDB3254961430063CC0A /* LaunchScreen.storyboard */,
+				B674BDAE254961410063CC0A /* Main.storyboard */,
 				B6D7AE4E2552B7BF0058BB97 /* Question.swift */,
+				B6357887256016F8003245FB /* QuestionsResult.swift */,
+				B6F01E0F25496E18003E1B21 /* QuestionViewController.swift */,
+				B635788C256020B5003245FB /* QuizApp_LabProject.xcdatamodeld */,
+				B6D7AE492552A8DB0058BB97 /* ResultView.swift */,
+				B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */,
+				B674BDAA254961410063CC0A /* SceneDelegate.swift */,
 				B6D7AE532552BA760058BB97 /* StartViewController.swift */,
 			);
 			path = QuizApp_LabProject;
@@ -270,13 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B7582025603265005D2E91 /* HighscoreTableViewController.swift in Sources */,
 				B674BDA9254961410063CC0A /* AppDelegate.swift in Sources */,
 				B6D7AE542552BA760058BB97 /* StartViewController.swift in Sources */,
+				B6357888256016F8003245FB /* QuestionsResult.swift in Sources */,
 				B674BDAB254961410063CC0A /* SceneDelegate.swift in Sources */,
 				B6D7AE4A2552A8DB0058BB97 /* ResultView.swift in Sources */,
 				B6D7AE4F2552B7BF0058BB97 /* Question.swift in Sources */,
+				B63578942560228B003245FB /* GameResult+CoreDataClass.swift in Sources */,
 				B6F01E1025496E18003E1B21 /* QuestionViewController.swift in Sources */,
 				B6D7AE452552A7FA0058BB97 /* ResultViewController.swift in Sources */,
+				B635788E256020B5003245FB /* QuizApp_LabProject.xcdatamodeld in Sources */,
+				B63578952560228B003245FB /* GameResult+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +625,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B635788C256020B5003245FB /* QuizApp_LabProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B635788D256020B5003245FB /* QuizApp_LabProject.xcdatamodel */,
+			);
+			currentVersion = B635788D256020B5003245FB /* QuizApp_LabProject.xcdatamodel */;
+			path = QuizApp_LabProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B674BD9D254961410063CC0A /* Project object */;
 }
