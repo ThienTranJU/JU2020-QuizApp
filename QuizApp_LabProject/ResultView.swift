@@ -29,8 +29,9 @@ class ResultView: UIView {
         backgroundImageView.image = backgroundImage
         addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        //backgroundImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         backgroundImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
         
         titleLabel.textColor = .white
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
