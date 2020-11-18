@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yn7-Pr-0Dh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yn7-Pr-0Dh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,27 +37,34 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the JU Quiz App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-xB-0nu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-OX-NXF">
-                                        <rect key="frame" x="0.0" y="193.5" width="414" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="155" width="414" height="154.5"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <segue destination="ozw-x1-cNn" kind="show" id="xDM-xl-ur5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Mu-Uyr">
-                                        <rect key="frame" x="0.0" y="387" width="414" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="309.5" width="414" height="155"/>
                                         <state key="normal" title="Highscore"/>
                                         <connections>
                                             <action selector="highscoreButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="XLH-MW-Pek"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aji-Ek-wt1">
+                                        <rect key="frame" x="0.0" y="464.5" width="414" height="154.5"/>
+                                        <state key="normal" title="Click me!"/>
+                                        <connections>
+                                            <action selector="exampleButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="GAa-ei-fUF"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWT-xM-zxr">
-                                        <rect key="frame" x="0.0" y="580.5" width="414" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="619" width="414" height="155"/>
                                         <state key="normal" title="Contact me"/>
                                         <connections>
                                             <segue destination="P5X-3R-hhN" kind="show" id="uqu-xg-Ff0"/>
@@ -65,8 +72,10 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="aji-Ek-wt1" firstAttribute="centerY" secondItem="ZUH-W0-i61" secondAttribute="centerY" id="0ss-Be-rEg"/>
                                     <constraint firstItem="TAn-xB-0nu" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="3lX-IQ-nSu"/>
                                     <constraint firstItem="lkx-Mu-Uyr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="MvQ-Ty-Nti"/>
+                                    <constraint firstItem="aji-Ek-wt1" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="fmD-Uv-C5K"/>
                                     <constraint firstItem="fWT-xM-zxr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="hQI-Pn-te9"/>
                                 </constraints>
                             </stackView>
