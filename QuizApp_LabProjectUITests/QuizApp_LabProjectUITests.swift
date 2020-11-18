@@ -31,12 +31,52 @@ class QuizApp_LabProjectUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+    func testGame() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["Start"].tap()
+        
+        var rightAnswers = 0
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["Correct 🥳"].exists {
+            rightAnswers += 1
         }
+        app.alerts.buttons.firstMatch.tap()
+        
+        
+        
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["Correct 🥳"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["Correct 🥳"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["Correct 🥳"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["Correct 🥳"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+
+        
+        XCTAssertTrue(app.staticTexts["Your Result"].exists)
+        XCTAssertTrue(app.staticTexts["You have \(rightAnswers) correct answers out of 5 questions"].exists)
     }
 }
