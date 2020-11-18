@@ -94,6 +94,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60780F725650AB000BAFBBE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B63578922560228B003245FB /* GameResult+CoreDataClass.swift */,
+				B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */,
+				B6D7AE4E2552B7BF0058BB97 /* Question.swift */,
+				B6357887256016F8003245FB /* QuestionsResult.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B60780F825650AEB00BAFBBE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B6F01E0F25496E18003E1B21 /* QuestionViewController.swift */,
+				B6D7AE492552A8DB0058BB97 /* ResultView.swift */,
+				B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		B674BD9C254961410063CC0A = {
 			isa = PBXGroup;
 			children = (
@@ -117,20 +138,15 @@
 		B674BDA7254961410063CC0A /* QuizApp_LabProject */ = {
 			isa = PBXGroup;
 			children = (
+				B60780F825650AEB00BAFBBE /* Game */,
+				B60780F725650AB000BAFBBE /* Data */,
 				B674BDA8254961410063CC0A /* AppDelegate.swift */,
 				B674BDB1254961430063CC0A /* Assets.xcassets */,
-				B63578922560228B003245FB /* GameResult+CoreDataClass.swift */,
-				B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */,
 				B6B7581F25603265005D2E91 /* HighscoreTableViewController.swift */,
 				B674BDB6254961430063CC0A /* Info.plist */,
 				B674BDB3254961430063CC0A /* LaunchScreen.storyboard */,
 				B674BDAE254961410063CC0A /* Main.storyboard */,
-				B6D7AE4E2552B7BF0058BB97 /* Question.swift */,
-				B6357887256016F8003245FB /* QuestionsResult.swift */,
-				B6F01E0F25496E18003E1B21 /* QuestionViewController.swift */,
 				B635788C256020B5003245FB /* QuizApp_LabProject.xcdatamodeld */,
-				B6D7AE492552A8DB0058BB97 /* ResultView.swift */,
-				B6D7AE442552A7FA0058BB97 /* ResultViewController.swift */,
 				B674BDAA254961410063CC0A /* SceneDelegate.swift */,
 				B6D7AE532552BA760058BB97 /* StartViewController.swift */,
 			);
