@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class QuestionViewController: UIViewController {
     @IBOutlet weak var buttonAnswerA: UIButton!
@@ -15,6 +14,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var buttonAnswerD: UIButton!
     
     @IBOutlet weak var labelQuestionTitle: UILabel!
+    
+    private let gameResultDatabaseManager = GameResultDatabaseManager()
     
     private var haveWon = false
     var questions: [Question] = [] {
@@ -39,6 +40,8 @@ class QuestionViewController: UIViewController {
         
         labelQuestionTitle.layer.masksToBounds = true
         labelQuestionTitle.layer.cornerRadius = 20
+        
+        
         
         labelQuestionTitle.text = question?.question.htmlDecoded
         
@@ -122,14 +125,8 @@ class QuestionViewController: UIViewController {
     // MARK: - Saving the result
     
     private func saveGameResult() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedObjectContext =
-            appDelegate.persistentContainer.viewContext
-        if let gameResult = NSEntityDescription.insertNewObject(forEntityName: "GameResult", into: managedObjectContext) as? GameResult {
-            gameResult.numberOfQuestions = Int32(numberOfQuestions)
-            gameResult.rightAnswers = Int32(rightAnswers)
-            gameResult.date = Date()
-            appDelegate.saveContext()
+        if gameResultDatabaseManager.create(withNumbersOfQuestions: numberOfQuestions, andRightAnswers: rightAnswers) != nil {
+            gameResultDatabaseManager.save()
         }
         
     }
