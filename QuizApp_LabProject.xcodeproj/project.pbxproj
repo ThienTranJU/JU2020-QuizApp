@@ -16,6 +16,8 @@
 		B635788E256020B5003245FB /* QuizApp_LabProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B635788C256020B5003245FB /* QuizApp_LabProject.xcdatamodeld */; };
 		B63578942560228B003245FB /* GameResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63578922560228B003245FB /* GameResult+CoreDataClass.swift */; };
 		B63578952560228B003245FB /* GameResult+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */; };
+		B66FB8C0256AA1E400AEB1C0 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66FB8BF256AA1E400AEB1C0 /* ContactViewController.swift */; };
+		B66FB8C5256AA27B00AEB1C0 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66FB8C4256AA27B00AEB1C0 /* ContactView.swift */; };
 		B674BDA9254961410063CC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDA8254961410063CC0A /* AppDelegate.swift */; };
 		B674BDAB254961410063CC0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B674BDAA254961410063CC0A /* SceneDelegate.swift */; };
 		B674BDB0254961410063CC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B674BDAE254961410063CC0A /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		B635788D256020B5003245FB /* QuizApp_LabProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizApp_LabProject.xcdatamodel; sourceTree = "<group>"; };
 		B63578922560228B003245FB /* GameResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B63578932560228B003245FB /* GameResult+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B66FB8BF256AA1E400AEB1C0 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		B66FB8C4256AA27B00AEB1C0 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		B674BDA5254961410063CC0A /* QuizApp_LabProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp_LabProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B674BDA8254961410063CC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B674BDAA254961410063CC0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				B6D7AE532552BA760058BB97 /* StartViewController.swift */,
 				B60780FF25650FD700BAFBBE /* String+HtmlDecoding.swift */,
 				B607810E25651C1000BAFBBE /* ExampleScrollViewController.swift */,
+				B66FB8BF256AA1E400AEB1C0 /* ContactViewController.swift */,
+				B66FB8C4256AA27B00AEB1C0 /* ContactView.swift */,
 			);
 			path = QuizApp_LabProject;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				B6B7582025603265005D2E91 /* HighscoreTableViewController.swift in Sources */,
 				B674BDA9254961410063CC0A /* AppDelegate.swift in Sources */,
 				B607810F25651C1000BAFBBE /* ExampleScrollViewController.swift in Sources */,
+				B66FB8C0256AA1E400AEB1C0 /* ContactViewController.swift in Sources */,
 				B6D7AE542552BA760058BB97 /* StartViewController.swift in Sources */,
 				B6357888256016F8003245FB /* QuestionsResult.swift in Sources */,
 				B674BDAB254961410063CC0A /* SceneDelegate.swift in Sources */,
@@ -328,6 +335,7 @@
 				B607810025650FD700BAFBBE /* String+HtmlDecoding.swift in Sources */,
 				B63578942560228B003245FB /* GameResult+CoreDataClass.swift in Sources */,
 				B607810A2565161500BAFBBE /* GameResultDatabaseManager.swift in Sources */,
+				B66FB8C5256AA27B00AEB1C0 /* ContactView.swift in Sources */,
 				B6F01E1025496E18003E1B21 /* QuestionViewController.swift in Sources */,
 				B6D7AE452552A7FA0058BB97 /* ResultViewController.swift in Sources */,
 				B635788E256020B5003245FB /* QuizApp_LabProject.xcdatamodeld in Sources */,
