@@ -37,39 +37,81 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the JU Quiz App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-xB-0nu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="057-o2-9p6">
+                                        <rect key="frame" x="0.0" y="64.5" width="414" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-Aj-SwB">
-                                        <rect key="frame" x="0.0" y="129" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="129" width="414" height="64.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7v-5c-bE1">
+                                        <rect key="frame" x="0.0" y="193.5" width="414" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-gN-Mqf">
+                                        <rect key="frame" x="0.0" y="258" width="414" height="65.5"/>
+                                        <segments>
+                                            <segment title="Easy"/>
+                                            <segment title="Medium"/>
+                                            <segment title="Hard"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="difficultySegmentHandler:" destination="8Tb-W8-h0F" eventType="valueChanged" id="jeX-63-0vw"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select number of questions (3-10)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-un-ckl">
+                                        <rect key="frame" x="0.0" y="322.5" width="414" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThG-n3-ffb">
+                                        <rect key="frame" x="0.0" y="387" width="414" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="3" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="s8H-4U-GSx">
+                                        <rect key="frame" x="-2" y="451.5" width="418" height="65.5"/>
+                                        <connections>
+                                            <action selector="sliderHandler:" destination="8Tb-W8-h0F" eventType="valueChanged" id="a3W-zV-Ddk"/>
+                                        </connections>
+                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9m-OX-NXF">
-                                        <rect key="frame" x="0.0" y="258" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="516" width="414" height="64.5"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
-                                            <segue destination="ozw-x1-cNn" kind="show" id="xDM-xl-ur5"/>
+                                            <action selector="startButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="kFr-8U-PK5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkx-Mu-Uyr">
-                                        <rect key="frame" x="0.0" y="387" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="580.5" width="414" height="64.5"/>
                                         <state key="normal" title="Highscore"/>
                                         <connections>
                                             <action selector="highscoreButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="XLH-MW-Pek"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aji-Ek-wt1">
-                                        <rect key="frame" x="0.0" y="516" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="645" width="414" height="64.5"/>
                                         <state key="normal" title="Click me!"/>
                                         <connections>
                                             <action selector="exampleButtonHandler:" destination="8Tb-W8-h0F" eventType="touchUpInside" id="GAa-ei-fUF"/>
+                                            <segue destination="ozw-x1-cNn" kind="show" identifier="QuestionView" id="dx1-3M-Zaf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWT-xM-zxr">
-                                        <rect key="frame" x="0.0" y="645" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="709.5" width="414" height="64.5"/>
                                         <state key="normal" title="Contact me"/>
                                         <connections>
                                             <segue destination="P5X-3R-hhN" kind="push" id="RF0-5q-cUG"/>
@@ -82,9 +124,11 @@
                                     <constraint firstItem="TAn-xB-0nu" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="3lX-IQ-nSu"/>
                                     <constraint firstAttribute="trailing" secondItem="Pk8-Aj-SwB" secondAttribute="trailing" constant="60" id="4TS-NV-Boh"/>
                                     <constraint firstItem="o9m-OX-NXF" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="5dX-sV-871"/>
+                                    <constraint firstAttribute="trailing" secondItem="ltP-gN-Mqf" secondAttribute="trailing" constant="20" id="94c-IB-YRQ"/>
                                     <constraint firstItem="lkx-Mu-Uyr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="MvQ-Ty-Nti"/>
                                     <constraint firstItem="aji-Ek-wt1" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="fmD-Uv-C5K"/>
                                     <constraint firstItem="fWT-xM-zxr" firstAttribute="centerX" secondItem="ZUH-W0-i61" secondAttribute="centerX" id="hQI-Pn-te9"/>
+                                    <constraint firstItem="ltP-gN-Mqf" firstAttribute="leading" secondItem="ZUH-W0-i61" secondAttribute="leading" constant="20" id="oWS-P7-Xdj"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -99,7 +143,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="JU Quiz" id="8PS-EY-MKB"/>
                     <connections>
+                        <outlet property="difficultySegmentedControl" destination="ltP-gN-Mqf" id="PlE-Ss-Xhp"/>
                         <outlet property="nameTextField" destination="Pk8-Aj-SwB" id="Xvc-KI-Pjd"/>
+                        <outlet property="numberOfQuestionsLabel" destination="ThG-n3-ffb" id="hcP-1d-rWA"/>
+                        <outlet property="numberOfQuestionsSlider" destination="s8H-4U-GSx" id="5jh-9x-T8i"/>
                         <outlet property="startButton" destination="o9m-OX-NXF" id="e3I-h9-7Mc"/>
                     </connections>
                 </viewController>

@@ -29,6 +29,7 @@ class QuestionViewController: UIViewController {
     var question: Question?
     var numberOfQuestions = 0
     var rightAnswers = 0
+    var questionDifficulty = "easy"
     
     override func viewDidLoad() {
         super.viewDidLoad()

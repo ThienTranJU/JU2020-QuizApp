@@ -12,12 +12,17 @@ class StartViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     var questions: [Question] = []
+    var questionDifficulty = "easy"
+    var numberOfQuestions = 3
+    @IBOutlet weak var difficultySegmentedControl: UISegmentedControl!
+    @IBOutlet weak var numberOfQuestionsSlider: UISlider!
+    @IBOutlet weak var numberOfQuestionsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startButton.isEnabled = false
-        downloadQuestions(amount: 5)
+        //startButton.isEnabled = false
+        //downloadQuestions(amount: 5, difficulty: questionDifficulty)
         
         nameTextField.placeholder = "Your name"
         nameTextField.delegate = self
@@ -28,19 +33,29 @@ class StartViewController: UIViewController {
         }
     }
     
+    @IBAction func sliderHandler(_ sender: Any) {
+        numberOfQuestions = Int(numberOfQuestionsSlider.value)
+        numberOfQuestionsLabel.text = "\(Int(numberOfQuestionsSlider.value))"
+    }
+    @IBAction func difficultySegmentHandler(_ sender: Any) {
+        questionDifficulty = difficultySegmentedControl.titleForSegment(at: difficultySegmentedControl.selectedSegmentIndex) ?? "easy"
+    }
     @IBAction func highscoreButtonHandler(_ sender: Any) {
         let highscoreTableViewController = HighscoreTableViewController()
         navigationController?.pushViewController(highscoreTableViewController, animated: true)
     }
+    @IBAction func startButtonHandler(_ sender: Any) {
+        downloadQuestions(amount: numberOfQuestions, difficulty: questionDifficulty)
+    }
     
-    private func downloadQuestions(amount: Int) {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=\(amount)&type=multiple") else {
+    private func downloadQuestions(amount: Int, difficulty: String) {
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=\(amount)&type=multiple&difficulty=\(difficulty)") else {
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
             guard let data = data else {
-                print(error)
+                print(error ?? "error")
                 return
             }
             
@@ -50,11 +65,17 @@ class StartViewController: UIViewController {
             self?.questions = questionsResult?.results ?? []
             
             DispatchQueue.main.async {
-                self?.startButton.isEnabled = true
+                //self?.startButton.isEnabled = true
+                self?.startQuiz()
             }
+            
         }
         
         task.resume()
+    }
+    
+    private func startQuiz() {
+        performSegue(withIdentifier: "QuestionView", sender: nil)
     }
     
     // MARK: - Navigation
@@ -68,6 +89,7 @@ class StartViewController: UIViewController {
 //            let questions = [questionVariation1,questionVariation2,questionVariation3]
             questionViewController.questions = questions
             questionViewController.numberOfQuestions = questions.count
+            questionViewController.questionDifficulty = questionDifficulty
         }
     }
 
