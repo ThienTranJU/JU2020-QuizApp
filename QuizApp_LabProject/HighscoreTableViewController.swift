@@ -56,6 +56,7 @@ class HighscoreTableViewController: UITableViewController {
 
         let gameResult = fetchedResultController.object(at: indexPath)
         cell.textLabel?.text = "You have \(gameResult.rightAnswers) correct answers out of \(gameResult.numberOfQuestions) questions"
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
 
         return cell
     }

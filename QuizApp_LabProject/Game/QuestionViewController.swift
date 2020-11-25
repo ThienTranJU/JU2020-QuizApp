@@ -143,15 +143,15 @@ class QuestionViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultViewController = segue.destination as? ResultViewController {
-            resultViewController.resultView.question1Label.text?.append("(" + questionsArray[0].difficulty.rawValue.capitalized + "/" + questionsArray[0].category + "): " + questionsArray[0].question.htmlDecoded! + " - " + questionsArray[0].correctAnswer.htmlDecoded!)
-            
-            resultViewController.resultView.question2Label.text?.append("(" + questionsArray[1].difficulty.rawValue.capitalized + "/" + questionsArray[1].category + "): " + questionsArray[1].question.htmlDecoded! + " - " + questionsArray[1].correctAnswer.htmlDecoded!)
-            
-            resultViewController.resultView.question3Label.text?.append("(" + questionsArray[2].difficulty.rawValue.capitalized + "/" + questionsArray[2].category + "): " + questionsArray[2].question.htmlDecoded! + " - " + questionsArray[2].correctAnswer.htmlDecoded!)
-            
-            resultViewController.resultView.question4Label.text?.append("(" + questionsArray[3].difficulty.rawValue.capitalized + "/" + questionsArray[3].category + "): " + questionsArray[3].question.htmlDecoded! + " - " + questionsArray[3].correctAnswer.htmlDecoded!)
-            
-            resultViewController.resultView.question5Label.text?.append("(" + questionsArray[4].difficulty.rawValue.capitalized + "/" + questionsArray[4].category + "): " + questionsArray[4].question.htmlDecoded! + " - " + questionsArray[4].correctAnswer.htmlDecoded!)
+//            resultViewController.resultView.question1Label.text?.append("(" + questionsArray[0].difficulty.rawValue.capitalized + "/" + questionsArray[0].category + "): " + questionsArray[0].question.htmlDecoded! + " - " + questionsArray[0].correctAnswer.htmlDecoded!)
+//            
+//            resultViewController.resultView.question2Label.text?.append("(" + questionsArray[1].difficulty.rawValue.capitalized + "/" + questionsArray[1].category + "): " + questionsArray[1].question.htmlDecoded! + " - " + questionsArray[1].correctAnswer.htmlDecoded!)
+//            
+//            resultViewController.resultView.question3Label.text?.append("(" + questionsArray[2].difficulty.rawValue.capitalized + "/" + questionsArray[2].category + "): " + questionsArray[2].question.htmlDecoded! + " - " + questionsArray[2].correctAnswer.htmlDecoded!)
+//            
+//            resultViewController.resultView.question4Label.text?.append("(" + questionsArray[3].difficulty.rawValue.capitalized + "/" + questionsArray[3].category + "): " + questionsArray[3].question.htmlDecoded! + " - " + questionsArray[3].correctAnswer.htmlDecoded!)
+//            
+//            resultViewController.resultView.question5Label.text?.append("(" + questionsArray[4].difficulty.rawValue.capitalized + "/" + questionsArray[4].category + "): " + questionsArray[4].question.htmlDecoded! + " - " + questionsArray[4].correctAnswer.htmlDecoded!)
             
             resultViewController.resultView.resultLabel.text = "You have \(rightAnswers) correct answers out of \(numberOfQuestions) questions"
         }

@@ -134,10 +134,10 @@
 		B674BD9C254961410063CC0A = {
 			isa = PBXGroup;
 			children = (
+				B674BDA6254961410063CC0A /* Products */,
 				B674BDA7254961410063CC0A /* QuizApp_LabProject */,
 				B674BDBE254961440063CC0A /* QuizApp_LabProjectTests */,
 				B674BDC9254961440063CC0A /* QuizApp_LabProjectUITests */,
-				B674BDA6254961410063CC0A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
