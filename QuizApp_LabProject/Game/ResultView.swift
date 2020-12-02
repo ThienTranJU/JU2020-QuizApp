@@ -14,11 +14,12 @@ class ResultView: UIView {
     let backgroundImage = UIImage(named: "backgroundImage")
     let backgroundImageView = UIImageView()
     let button = UIButton()
-    let question1Label = UILabel()
-    let question2Label = UILabel()
-    let question3Label = UILabel()
-    let question4Label = UILabel()
-    let question5Label = UILabel()
+    let questionsSummaryLabel = UILabel()
+//    let question1Label = UILabel()
+//    let question2Label = UILabel()
+//    let question3Label = UILabel()
+//    let question4Label = UILabel()
+//    let question5Label = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,6 +57,17 @@ class ResultView: UIView {
         resultLabel.lineBreakMode = .byWordWrapping
         resultLabel.numberOfLines = 0
         resultLabel.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, constant: -20).isActive = true
+        
+        questionsSummaryLabel.textColor = .white
+        questionsSummaryLabel.font = UIFont.preferredFont(forTextStyle: .callout)
+        questionsSummaryLabel.adjustsFontForContentSizeCategory = true
+        addSubview(questionsSummaryLabel)
+        questionsSummaryLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionsSummaryLabel.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20).isActive = true
+        questionsSummaryLabel.centerXAnchor.constraint(equalTo: resultLabel.centerXAnchor).isActive = true
+        questionsSummaryLabel.lineBreakMode = .byWordWrapping
+        questionsSummaryLabel.numberOfLines = 0
+        questionsSummaryLabel.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, constant: -20).isActive = true
         
 //        question1Label.textColor = .white
 //        question1Label.font = UIFont.preferredFont(forTextStyle: .callout)

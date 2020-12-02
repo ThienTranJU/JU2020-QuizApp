@@ -14,6 +14,7 @@ class StartViewController: UIViewController {
     var questions: [Question] = []
     var questionDifficulty = "easy"
     var numberOfQuestions = 3
+    
     @IBOutlet weak var difficultySegmentedControl: UISegmentedControl!
     @IBOutlet weak var numberOfQuestionsSlider: UISlider!
     @IBOutlet weak var numberOfQuestionsLabel: UILabel!
@@ -33,12 +34,42 @@ class StartViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        nameTextField.placeholder = "Your name"
+        nameTextField.delegate = self
+        nameTextField.returnKeyType = .done
+        
+        if let name = UserDefaults.standard.string(forKey: "username") {
+            nameTextField.text = name
+        }
+        
+        questionDifficulty = difficultySegmentedControl.titleForSegment(at: difficultySegmentedControl.selectedSegmentIndex)?.lowercased() ?? "easy"
+        switch questionDifficulty {
+        case "mixed":
+            questionDifficulty = ""
+        default:
+            return
+        }
+        numberOfQuestions = Int(numberOfQuestionsSlider.value)
+        numberOfQuestionsLabel.text = "\(Int(numberOfQuestionsSlider.value))"
+        
+        print("test",questionDifficulty)
+        print("test",numberOfQuestions)
+        
+    }
+    
     @IBAction func sliderHandler(_ sender: Any) {
         numberOfQuestions = Int(numberOfQuestionsSlider.value)
         numberOfQuestionsLabel.text = "\(Int(numberOfQuestionsSlider.value))"
     }
     @IBAction func difficultySegmentHandler(_ sender: Any) {
-        questionDifficulty = difficultySegmentedControl.titleForSegment(at: difficultySegmentedControl.selectedSegmentIndex) ?? "easy"
+        questionDifficulty = difficultySegmentedControl.titleForSegment(at: difficultySegmentedControl.selectedSegmentIndex)?.lowercased() ?? "easy"
+        switch questionDifficulty {
+        case "mixed":
+            questionDifficulty = ""
+        default:
+            return
+        }
     }
     @IBAction func highscoreButtonHandler(_ sender: Any) {
         let highscoreTableViewController = HighscoreTableViewController()
@@ -46,6 +77,8 @@ class StartViewController: UIViewController {
     }
     @IBAction func startButtonHandler(_ sender: Any) {
         downloadQuestions(amount: numberOfQuestions, difficulty: questionDifficulty)
+        let alertController = UIAlertController(title: "Preparing questions", message: "Please wait...", preferredStyle: UIAlertController.Style.alert)
+        present(alertController, animated: true, completion: nil)
     }
     
     private func downloadQuestions(amount: Int, difficulty: String) {
@@ -67,6 +100,7 @@ class StartViewController: UIViewController {
             DispatchQueue.main.async {
                 //self?.startButton.isEnabled = true
                 self?.startQuiz()
+                self?.dismiss(animated: true, completion: nil)
             }
             
         }
@@ -75,7 +109,11 @@ class StartViewController: UIViewController {
     }
     
     private func startQuiz() {
-        performSegue(withIdentifier: "QuestionView", sender: nil)
+        //performSegue(withIdentifier: "QuestionView", sender: nil)
+        let questionViewController = (storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController)!
+        questionViewController.questions = questions
+        questionViewController.numberOfQuestions = questions.count
+        navigationController?.pushViewController(questionViewController, animated: true)
     }
     
     // MARK: - Navigation
@@ -89,7 +127,6 @@ class StartViewController: UIViewController {
 //            let questions = [questionVariation1,questionVariation2,questionVariation3]
             questionViewController.questions = questions
             questionViewController.numberOfQuestions = questions.count
-            questionViewController.questionDifficulty = questionDifficulty
         }
     }
 

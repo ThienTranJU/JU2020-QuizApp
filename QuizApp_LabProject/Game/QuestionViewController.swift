@@ -29,7 +29,12 @@ class QuestionViewController: UIViewController {
     var question: Question?
     var numberOfQuestions = 0
     var rightAnswers = 0
+    
     var questionDifficulty = "easy"
+    var easyQuestionCounter = 0
+    var mediumQuestionCounter = 0
+    var hardQuestionCounter = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +97,20 @@ class QuestionViewController: UIViewController {
         button.title(for: .normal) == question?.correctAnswer
     }
     
+    private func checkQuestionDifficulty(easyQuestions: Int, mediumQuestions: Int, hardQuestions: Int, question: Question) {
+        let questionDifficulty = question.difficulty.rawValue
+        switch questionDifficulty {
+        case "easy":
+            easyQuestionCounter+=1
+        case "medium":
+            mediumQuestionCounter+=1
+        case "hard":
+            hardQuestionCounter+=1
+        default:
+            return
+        }
+    }
+    
     private func showRightAnswerAlert (button: UIButton) {
         haveWon = true
         button.backgroundColor = .green
@@ -114,16 +133,23 @@ class QuestionViewController: UIViewController {
     
     private func goToNextScreen() {
         guard !questions.isEmpty,
-              let questionViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController else {
-            questionsArray.append(question!)
+              let questionViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController
+        else {
+            //questionsArray.append(question!)
+            checkQuestionDifficulty(easyQuestions: easyQuestionCounter, mediumQuestions: mediumQuestionCounter, hardQuestions: hardQuestionCounter, question: question!)
             saveGameResult()
             performSegue(withIdentifier: "ResultView", sender: nil)
             return
         }
         
-        questionsArray.append(question!)
+        //questionsArray.append(question!)
 
-        questionViewController.questionsArray = questionsArray
+        //questionViewController.questionsArray = questionsArray
+        checkQuestionDifficulty(easyQuestions: easyQuestionCounter, mediumQuestions: mediumQuestionCounter, hardQuestions: hardQuestionCounter, question: question!)
+        questionViewController.easyQuestionCounter = easyQuestionCounter
+        questionViewController.mediumQuestionCounter = mediumQuestionCounter
+        questionViewController.hardQuestionCounter = hardQuestionCounter
+        
         questionViewController.questions = questions
         questionViewController.numberOfQuestions = numberOfQuestions
         questionViewController.rightAnswers = rightAnswers
@@ -155,6 +181,7 @@ class QuestionViewController: UIViewController {
 //            resultViewController.resultView.question5Label.text?.append("(" + questionsArray[4].difficulty.rawValue.capitalized + "/" + questionsArray[4].category + "): " + questionsArray[4].question.htmlDecoded! + " - " + questionsArray[4].correctAnswer.htmlDecoded!)
             
             resultViewController.resultView.resultLabel.text = "You have \(rightAnswers) correct answers out of \(numberOfQuestions) questions"
+            resultViewController.resultView.questionsSummaryLabel.text = "There were \(easyQuestionCounter) easy questions, \(mediumQuestionCounter) medium questions, \(hardQuestionCounter) hard questions."
         }
     }
 
